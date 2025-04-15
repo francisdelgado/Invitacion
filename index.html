@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Invitación para Adrianny</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #ffe6f0, #fff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .card {
+      background-color: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      text-align: center;
+      max-width: 500px;
+      border: 2px solid #f7c5d4;
+      transition: all 0.5s ease;
+    }
+
+    h1 {
+      color: #d63384;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 18px;
+      color: #333;
+      margin: 10px 0;
+    }
+
+    .heart {
+      font-size: 30px;
+      color: #ff3366;
+      margin: 20px 0;
+      animation: heartbeat 1.5s infinite;
+    }
+
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.3); }
+    }
+
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .yes-btn {
+      background-color: #ff69b4;
+      color: white;
+    }
+
+    .yes-btn:hover {
+      background-color: #ff1493;
+    }
+
+    .no-btn {
+      background-color: #ccc;
+      color: #333;
+    }
+
+    .no-btn:hover {
+      background-color: #bbb;
+    }
+  </style>
+</head>
+<body>
+  <div class="card" id="invitation">
+    <h1>Hola Adrianny 💌</h1>
+    <p>¿Te gustaría salir a comer conmigo?</p>
+    <p><strong>Este 5 de mayo</strong>, me encantaría compartir nuestra primera comida juntos.</p>
+    <div class="heart">❤️</div>
+    <p>Será algo sencillo, pero especial. Solo tú y yo.</p>
+    <p>¿Qué dices? 😊</p>
+    <button class="yes-btn" onclick="responder(true)">Sí, quiero 💖</button>
+    <button class="no-btn" onclick="responder(false)">No, gracias 😢</button>
+  </div>
+
+  <script>
+    function responder(acepta) {
+      const card = document.getElementById("invitation");
+      if (acepta) {
+        card.innerHTML = `
+          <h1 style="color: #d63384;">Tenemos una cita, mami 😘❤️</h1>
+          <p style="font-size: 20px;">Estoy emocionado por verte el 5 de mayo. ¡Será especial! ✨</p>
+        `;
+      } else {
+        card.innerHTML = `
+          <h1 style="color: gray;">Está bien, Adrianny 🥺</h1>
+          <p style="font-size: 18px;">Lo entiendo, quizás en otra ocasión podamos compartir un momento bonito.</p>
+        `;
+      }
+    }
+  </script>
+</body>
+</html>
